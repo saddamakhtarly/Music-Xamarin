@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView" 
+             xmlns:control="clr-namespace:Plugin.Segmented.Control;assembly=Plugin.Segmented"
+             x:Class="Music.Views.HomePage" 
+             NavigationPage.HasBackButton="True" Title="Select Key" BackgroundColor="#ed399c" >
+
+    <StackLayout>
+        <yummy:PancakeView BackgroundColor="white" Padding="30"  CornerRadius="50,50,0,0" HorizontalOptions="FillAndExpand" HeightRequest="1000">
+            <StackLayout>
+                <control:SegmentedControl
+                x:Name="SegmentedControl"
+                SelectedSegment="0"
+                TintColor="#ed399c"
+                TextColor="Black"
+                SelectedTextColor="White"
+                
+                DisabledColor="Black">
+                    <control:SegmentedControl.Children>
+                        <control:SegmentedControlOption Text="Standard"/>
+                        <control:SegmentedControlOption Text="High"/>
+                        <control:SegmentedControlOption Text="Low"/>
+                    </control:SegmentedControl.Children>
+                </control:SegmentedControl>
+                <Label Text="This Standard Lessons contains standard voices." TextColor="#848484" HorizontalOptions="Center" FontSize="Medium" />
+                <StackLayout>
+                    <ListView ItemsSource="{Binding Products}" HasUnevenRows="True" SelectedItem="{Binding SelectedProduct,Mode=TwoWay}">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell >
+                                    <yummy:PancakeView CornerRadius="30,30,30,30">
+                                        <Grid HeightRequest="70"  BackgroundColor="#F0F0F0" RowSpacing="1 "  Margin="5" >
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="*"  ></RowDefinition>
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="10"></ColumnDefinition>
+                                            <ColumnDefinition Width="*"></ColumnDefinition>
+                                            <ColumnDefinition Width="50"></ColumnDefinition>
+                                        </Grid.ColumnDefinitions>
+
+
+                                            <Image Grid.RowSpan="2" Grid.Column="0" HeightRequest="100" WidthRequest="1" VerticalOptions="Start" Margin="2,2,1,2" Source="{Binding ThumbnailURL}" BackgroundColor="Green"/>
+                                            <Label Grid.Row="0" Grid.Column="1" VerticalOptions="Start"  Text="{Binding Name}" Margin="3" />
+                                            <Label Grid.Row="1" Grid.Column="1" VerticalOptions="Start"  Text="{Binding Description}" Margin="3" />
+                                            <Image Grid.RowSpan="2" Grid.Column="2" HeightRequest="20" WidthRequest="20" VerticalOptions="CenterAndExpand" Margin="2,2,1,2" Source="Arrow.png"  />
+
+                                        </Grid>
+                                    </yummy:PancakeView>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </StackLayout>
+
+
+
+
+
+
+
+            </StackLayout>
+        </yummy:PancakeView>
+
+    </StackLayout>
+
+</ContentPage>

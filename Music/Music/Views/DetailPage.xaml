@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView" 
+             x:Class="Music.Views.DetailPage"
+             NavigationPage.HasBackButton="True"  Title="Lession 1" BackgroundColor="#ed399c" >
+    <ContentPage.Content>
+        <StackLayout>
+            <yummy:PancakeView BackgroundColor="white" Padding="30"  CornerRadius="50,50,0,0" HorizontalOptions="FillAndExpand" HeightRequest="1000">
+                <StackLayout>
+                    <StackLayout>
+                        <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Image Grid.RowSpan="4" Grid.Column="0" Margin="10" BackgroundColor="Green" />
+                        <Label Grid.Row="0" Grid.Column="1" Text="Warm-Ups" TextColor="Black" FontAttributes="Bold" FontSize="Medium" />
+                        <Label Grid.Row="1" Grid.Column="1" Text="Warm-Downs" TextColor="Black" FontAttributes="Bold" FontSize="Medium" />
+                        <Label Grid.Row="2" Grid.Column="1" Text="Lesson 1" FontSize="Medium" />
+                        <Label Grid.Row="3" Grid.Column="1" Text="Chery Porter" TextColor="#ed399c" FontSize="Medium" />
+                    </Grid>
+                        <Grid Padding="0,30">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Button Grid.Row="0" Grid.Column="0" CornerRadius="50" Text="Play All" BackgroundColor="#ed399c" TextColor="White" FontSize="12" HorizontalOptions="Start" Margin="10" WidthRequest="150" />
+                        <Button Grid.Row="0" Grid.Column="1" CornerRadius="50" Text="Mark As Completed" BackgroundColor="Green" TextColor="White" FontSize="12" HorizontalOptions="End" Margin="10" WidthRequest="150" />
+                        
+                    </Grid>
+
+                            <!--<ListView >
+                                <ListView.ItemTemplate>
+                                    <DataTemplate>
+                                        <ViewCell>
+                                            <StackLayout Orientation="Vertical" >
+                                                <Label Grid.Column="0" Text="label 1"/>
+                                                <Label Grid.Column="1" Text="label 2"/>
+                                                <Label Grid.Column="2" Text="label 3"/>
+                                            </StackLayout>
+                                        </ViewCell>
+                                    </DataTemplate>
+                                </ListView.ItemTemplate>
+                            </ListView>-->
+                        
+                    </StackLayout>
+                </StackLayout>
+            </yummy:PancakeView>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
